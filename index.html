@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src=" https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="/js/diver.js"></script>
+        <script src = "js/fish.js"></script>
+    </head>
+    <body>
+        <a-scene >
+            <a-a-assets>
+              <a-asset-item id="island" src="assets/island/scene.gltf"></a-asset-item>
+      
+              <a-asset-item
+                id="treasure"
+                src="assets/treasure/model.gltf"
+              ></a-asset-item>
+              <a-asset-item id="turtle" src="assets/turtle/scene.gltf">
+              </a-asset-item>        
+              <a-asset-item
+                id="diver"
+                src="assets/scuba_driver/scene.gltf"
+              ></a-asset-item>
+            </a-a-assets>
+
+            <a-entity
+        camera="active: true"
+        look-controls
+        position="0 10 25"
+      ></a-entity>
+
+            <a-entity
+          gltf-model="#island"
+          scale="1 1 1"
+          position="0 -15 -40"
+          rotation="0 0 0"
+          ground-move
+          fish
+          ring
+        ></a-entity>
+
+        <a-entity
+          gltf-model="#treasure"
+          scale="15 15 15"
+          position="-5 -30 -40"
+          rotation="0 90 0"
+          ground-move
+        ></a-entity>
+
+        <a-entity
+          gltf-model="#treasure"
+          scale="15 15 15"
+          position="11 -30 -40"
+          rotation="0 90 0"
+          ground-move
+        ></a-entity>
+       
+       
+        <a-entity
+          gltf-model="#turtle"
+          scale="0.005 0.005 0.005"
+          position="0 -10 0"
+          rotation="0 90 0"
+          ground-move
+        ></a-entity>
+
+
+      <a-entity
+        gltf-model="#diver"
+        scale="0.1 0.1 0.1"
+        position="5 0 15"
+        rotation="0 90 -20"    
+        diver-move
+        dynamic-body = "mass:0"    
+      >
+      </a-entity>
+      <a-sky
+      position="0 0 0"
+      radius="1000"
+      color="#015482"
+    ></a-sky>
+
+
+    <a-entity position="-23.5 19.3 0">
+      <a-entity
+        position="-1.5 0.07 0"
+        text="font: aileronsemibold; width: 12; color: black; value: TIME\nREMAINING"
+      ></a-entity>
+      <a-entity
+        id="timer"
+        position="-9.8 0.3 0"
+        text="font: exo2bold; align: center; width: 30; color: black; value: 00:00"
+      ></a-entity>
+    </a-entity>
+
+    <a-entity
+    position="-28.5 21.5 0"
+    text="font: exo2bold; align: center; width: 40; color: black; value: SUBA DIVING"
+  ></a-entity>
+
+    <a-entity position="40.5 17 0">
+      <a-entity
+        text="font: aileronsemibold; width: 40; color: black; value: Score:"
+      ></a-entity>
+      <a-entity
+        id="Score"
+        position="-13 0 0"
+        text="font: exo2bold; align: center; width: 30; color: black; value: 0"
+      ></a-entity>
+    </a-entity>
+
+    <a-entity
+          id = "game"
+          visible = "false"
+          position="14 4 0"
+          text="font: aileronsemibold; width: 40; color: black; value: Gameover"
+        ></a-entity>
+
+        <a-entity position="-18 19.3 0">
+          <a-entity
+            position="-0.6 0.13 0"
+            text="font: aileronsemibold; width: 12; color: black; value: Targets\nREMAINING"
+          ></a-entity>
+          <a-entity
+            id="Targets"
+            position="-8 0.3 0"
+            text="font: exo2bold; align: center; width: 30; color: black; value:20"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+
+    </a-scene>
+    </body>
+</html>
